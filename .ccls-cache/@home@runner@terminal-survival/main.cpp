@@ -12,22 +12,48 @@ class Event : public Enemy{ // This has an inheritance of Enemy because event co
 public:
 };
 
+int chksave() { // Checks for save
+	ifstream isave (".saved_game");
+	if(isave.is_open()){return 0;}else{return 1;}
+}
+
+int mksave() {
+	string cmd;
+	ofstream osave (".saved_game");
+	if (osave.is_open()) {
+		cout << "It appears that there isn't a save where this is being executed. Making a new save." << endl;
+		osave << "[gamebeginningv1]\n";
+		osave << "area:newworld\nstate:begin\nstoryline:base\nmodsrequire:base\n";
+		osave << "\n[gameend]";
+		cmd = "gameconditioned";
+		return 0;
+	}else{
+		cout << "You do not have permission to save here!" << endl;
+		return 1;
+	}
+}
+
+int playgame(int startstate) {
+	if (startstate == 0) {
+		return 0;
+	} else if (startstate == 1) {
+		cout << "Already saved.\n";
+		return 0;
+	}
+	return 0;
+}
+
 int main() {
 	string test, cmd, brand;
 	brand = "base";
 	ifstream isave (".saved_game");
-	ofstream osave (".saved_game");
 	Player player;
-	if (isave.is_open()) { // Checks if the game found and opened the save
+	if (chksave() == 0) { // Checks if the game found and opened the save
 		cout << "Continue Game?\nPossible commands are :\n start,play,continue,new,backup,quit,exit\n";
 		cout << "> ";
 		cin >> cmd;
-	} else { // Creates save if it isn't in the running directory
-	cout << "It appears that there isn't a save where this is being executed. Making a new save." << endl;
-	osave << "[gamebeginningv1]\n";
-	osave << "area:newworld\nstate:begin\nstoryline:base\nmodsrequire:base\n";
-	osave << "\n[gameend]";
-	cmd = "gameconditioned";
+	} else {
+		mksave();
 	} if (cmd == "gameconditioned") {	
 		playgame(0);
 	} else if (cmd == "play" || cmd == "start" || cmd == "continue") {
@@ -35,14 +61,9 @@ int main() {
 	} else {
 		cout << "Invalid cmd!" << endl;
 	}
+	ofstream osave (".saved_game");
 	osave.close();
 	isave.close();
 	return 0;
 }
-
-int playgame(int startstate) {
-	if (startstate == 0) {
-		osave.seekp(0,ios::beg);
-		isave.seekg(0,ios::beg);
-	}
-}
+// 69 LINES!!!!!!
