@@ -1,8 +1,8 @@
 # How will the beginning of this work???
 List of ways this may start:
 
-* You suddenly awaken, in a forest with a headache. You take a look around and find some sticks. what will you do?
-* The world is putting its pieces together. It hurts to watch but suddenly youre in the wilderness and dont know where you are. You look around and find some things that might help on your journey. [Items listed in new line]
+* *"You suddenly awaken, in a forest with a headache. You take a look around and find some sticks. what will you do?"*
+* *"The world is putting its pieces together. It hurts to watch but suddenly youre in the wilderness and dont know where you are. You look around and find some things that might help on your journey. [Items listed in new line]"*
 
 Options for these could be:
 
