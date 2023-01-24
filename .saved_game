@@ -1,0 +1,7 @@
+[gamebeginningv1]
+area:newworld
+state:begin
+storyline:base
+modsrequire:base
+
+[gameend]
