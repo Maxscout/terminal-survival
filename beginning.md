@@ -20,4 +20,24 @@ Movement is also something thats a bit off. Theres no way to postition yourself 
 move [direction (north,south,east,west)] [amt of steps/distance????]
 ```
 
-Another item to address would be world generation. It would be a little boring to be playing in the same place constantly. Using some way of randomizing a mass amount of numbers in a certain amount of time, it may be possible. I dont know a way to do it yet though
+Another item to address would be world generation. It would be a little boring to be playing in the same place constantly. Using some way of randomizing a mass amount of numbers in a certain amount of time, it may be possible. I dont know a way to do it yet though. Srand allows for a seed, maybe we generate a 10 digit number to use for the seed?
+
+One more thing is the items that go inside of your inventory. I think it would be best for items to have an id.
+
+```
+--------------
+List of Items
+--------------
+
+1 - Stick
+2 - Stone
+3 - Tree
+4 - Dirt
+5 - Plant
+```
+
+Those are just 5 items I came up with that could be used in the game. I brought items up though because during world generation some event or something (like an item) will be placed in the certain area the player is in. So, at the start of the game it will tell you what is easily accesible (whatever the player sees after suddenly existing) but not what isn't easily accesible. This would be done with using some extra data and common sense from the developer to define attributes of an object.
+
+# Cool! How is this all going to be saved?
+
+I don't know *how* it would be easily divided or even able to be read by the program yet but I'm almost there. Using i/ofstream the program will be able to take input and output respectively. When reading a file it allows for an offset (I dont know if its by characters or lines) which could be used to start reading and writing to and from the proper spot.
