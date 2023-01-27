@@ -1,12 +1,21 @@
 #include <iostream>
+#include <fstream>
+#include <limits>
 
 using namespace std;
 
+std::ifstream& RLine(std::ifstream& file, unsigned int num){
+    file.seekg(std::ios::beg);
+    for(int i=0; i < num - 1; ++i){
+        file.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+    }
+    return file;
+}
+
 int main() {
-	srand(time(NULL));
-	int random = rand() % 20 + 1;
-	cout << random << endl;
-	srand(rand() % 80000 + 1);
-	random = rand() % 2210 + 1;
-	cout << random << endl;
+	string line;
+	ifstream exa("example.txt");
+	RFLine(exa, 4);
+	exa >> line;
+	cout << line << endl;
 }

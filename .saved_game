@@ -1,7 +1,4 @@
-[gamebeginningv1]
-area:newworld
-state:begin
-storyline:base
-modsrequire:base
+[gamebeg]
 
+modsrequire:base
 [gameend]
