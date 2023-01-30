@@ -34,9 +34,27 @@ List of Items
 3 - Tree
 4 - Dirt
 5 - Plant
+6 - Cactus
+7 - Sand
 ```
 
 Those are just 5 items I came up with that could be used in the game. I brought items up though because during world generation some event or something (like an item) will be placed in the certain area the player is in. So, at the start of the game it will tell you what is easily accesible (whatever the player sees after suddenly existing) but not what isn't easily accesible. This would be done with using some extra data and common sense from the developer to define attributes of an object.
+
+You may (or most likely may not) have noticed I made items array strings. Why? To hold all of their attributes. All their sizes are six because I haven't thought of attributes. They're strings because checking if an item can do something/has the attribute is just **"true"** or **"false"** and that you can have numbers or any other type of data.
+
+There's also where you are going to spawn. Having it generate a number which picks which *biome* you spawn in may be the best option for now. Heres a list of possible places to spawn.
+
+```
+id|  area
+__|________
+1 - Forest
+2 - Desert
+3 - Tundra
+4 - Swamp (Get out of my swamp!)
+5 - Mountains (Maybe also extreme mountains?)
+```
+
+Maybe having the game tell time would improve how enemies summon/interact with the player. Some enemies may have chances to spawn in the daylight and most will spawn in the night. It will only tell time relatively when you don't have a watch/clock/any way to tell time. 
 
 # Cool! How is this all going to be saved?
 
