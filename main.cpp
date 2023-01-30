@@ -103,6 +103,59 @@ int playgame(int startstate) {
 			cout << "You're very high in the sky on some mountains. It isn't as cold as you thought.\n";
 			blockitem[1] = &items.stone[1];
 		}
+		osave << "_" << *blockitem[1] << "\n_" << *blockitem[2];
+		cout << "You found";
+		int tmp = 0;
+		if ((*blockitem[1] = 1) || (*blockitem[2] = 1)) {
+			tmp++;
+			if (tmp >= 0) {
+			cout << " and some sticks";
+			}
+			cout << " some sticks";
+		} if ((*blockitem[1] = 2) || (*blockitem[2] = 2)) {
+			tmp++;
+			if (tmp >= 0) {
+			cout << " and some stone";
+			}
+			cout << " some stone";
+		} if ((*blockitem[1] = 3) || (*blockitem[2] = 3)) {
+			tmp++;
+			if (tmp >= 0) {
+			cout << " and some trees";
+			}
+			cout << " some trees";
+		} if ((*blockitem[1] = 4) || (*blockitem[2] = 4)) {
+			tmp++;
+			if (tmp >= 0) {
+			cout << " and some dirt";
+			}
+			cout << " some dirt";
+		} if ((*blockitem[1] = 5) || (*blockitem[2] = 5)) {
+			tmp++;
+			if (tmp >= 0) {
+			cout << " and some plants";
+			}
+			cout << " some plants";
+		} if ((*blockitem[1] = 6) || (*blockitem[2] = 6)) {
+			tmp++;
+			if (tmp >= 0) {
+			cout << " and some cactus";
+			}
+			cout << " some cactus";
+		} if ((*blockitem[1] = 7) || (*blockitem[2] = 7)) {
+			tmp++;
+			if (tmp >= 0) {
+			cout << " and some sand";
+			}
+			cout << " some sand";
+		} if ((*blockitem[1] = 8) || (*blockitem[2] = 8)) {
+			tmp++;
+			if (tmp >= 0) {
+			cout << " and some mud";
+			}
+			cout << " some mud";
+		}
+		osave.close();
 		return 0;
 	} else if (startstate == 1) {
 		cout << "Already saved.\n";

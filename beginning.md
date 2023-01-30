@@ -57,6 +57,19 @@ __|________
 
 Maybe having the game tell time would improve how enemies summon/interact with the player. Some enemies may have chances to spawn in the daylight and most will spawn in the night. It will only tell time relatively when you don't have a watch/clock/any way to tell time. 
 
+Including what the object is made of/its primary material type would be nice. Heres a material list
+
+```
+id mat
+__|____
+1 |Wood
+2 |Stone
+3 |Metal
+4 |Plant
+5 |Sand
+6 |Dirt
+```
+
 # Cool! How is this all going to be saved?
 
 I don't know *how* it would be easily divided or even able to be read by the program yet but I'm almost there. Using i/ofstream the program will be able to take input and output respectively. When reading a file it allows for an offset (I dont know if its by characters or lines) which could be used to start reading and writing to and from the proper spot.
