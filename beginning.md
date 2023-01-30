@@ -36,6 +36,7 @@ List of Items
 5 - Plant
 6 - Cactus
 7 - Sand
+8 - Mud
 ```
 
 Those are just 5 items I came up with that could be used in the game. I brought items up though because during world generation some event or something (like an item) will be placed in the certain area the player is in. So, at the start of the game it will tell you what is easily accesible (whatever the player sees after suddenly existing) but not what isn't easily accesible. This would be done with using some extra data and common sense from the developer to define attributes of an object.
@@ -49,7 +50,7 @@ id|  area
 __|________
 1 - Forest
 2 - Desert
-3 - Tundra
+3 - Some snowy place with trees
 4 - Swamp (Get out of my swamp!)
 5 - Mountains (Maybe also extreme mountains?)
 ```

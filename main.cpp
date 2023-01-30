@@ -14,13 +14,14 @@ public:
 };
 class Item { // For Items and their item ids
 public:
-	string stick[1];
-	string stone[1];
-	string tree[1];
-	string dirt[1];
-	string plant[1];
-	string cactus[1];
-	string sand[1];
+	int stick[1];
+	int stone[1];
+	int tree[1];
+	int dirt[1];
+	int sludge[1];
+	int plant[1];
+	int cactus[1];
+	int sand[1];
 };
 class Save { // save system vv
 public:
@@ -29,7 +30,6 @@ string mods;
 bool modded() {
 	string tmp;
 	ifstream isave (".saved_game");
-	isave.seekg(-1,ios::end);
 	while (getline (isave,tmp)) {
 		cout << tmp << endl;
 	}
@@ -45,8 +45,6 @@ bool mksave() {
 	ofstream osave (".saved_game");
 	if (osave.is_open()) {
 		cout << "It appears that there isn't a save where this is being executed. Making a new save." << endl;
-		osave << "[gamebeg]\n";
-		osave << "\n[gameend]";
 		osave.close();
 		return true;
 	}else{
@@ -70,27 +68,32 @@ int playgame(int startstate) {
 	if (startstate == 0) {
 		ifstream isave(".saved_game");
 		ofstream osave(".saved_game");
+		Item items;
 		cout << "The chaos is making your head hurt. But you somehow know it will go away.\n";
 		srand(time(NULL));
 		int seed = rand() % 9999999 + 1;
 		srand(seed);
-		osave.seekp(9);
-		osave << "seed_" << seed << endl;
-		int spawn = rand() % 5 + 1;
-		srand(time(NULL));
-		int randitem = rand() % 5 + 1;
-		osave << "1_" << spawn << endl;
-		if (spawn == 1) {
-			cout << "You awaken as if you were there all along not remembering anything. You see many trees around.";
-		} if (spawn == 2) {
-			cout << "You're up, very suddenly, standing with sand surrounding every bit of your vision and few cactuses.";
-			randitem = 6;
-		} if (spawn == 3) {
-			
-		} if (spawn == 4) {
-			
-		} if (spawn == 5) {
-			
+		osave << "initseed_" << seed << endl;
+		int biome = rand() % 5 + 1;
+		int* blockitem[2];
+		osave << "0\n_" << biome << "\n_" << seed << endl;
+		if (biome == 1) {
+			cout << "You awaken as if you were there all along not remembering anything. You see many trees around.\n";
+			blockitem[1] = &items.tree[1];
+			blockitem[2] = &items.stick[1];
+		} if (biome == 2) {
+			cout << "You're up, very suddenly, standing with sand surrounding every bit of your vision and few cactuses.\n";
+			blockitem[1] = &items.cactus[1];
+		} if (biome == 3) {
+			cout << "Brrr! It's very cold and theres trees around.\n";
+			blockitem[1] = &items.tree[1];
+		} if (biome == 4) {
+			cout << "Yuck! You're knee-deep in mud with some trees that surround you.\n";
+			blockitem[1] = &items.tree[1];
+			blockitem[2] = &items.sludge[1];
+		} if (biome == 5) {
+			cout << "You're very high in the sky on some mountains. It isn't as cold as you thought.\n";
+			blockitem[1] = &items.stone[1];
 		}
 		return 0;
 	} else if (startstate == 1) {
