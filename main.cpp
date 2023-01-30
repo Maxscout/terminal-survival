@@ -6,6 +6,14 @@ using namespace std;
 class Player{ // Controls the actions, logic, and stats of the player in the game
 public:
 };
+class Biome{
+	public:
+		int forest[3];
+		int desert[3];
+		int snowforest[3];
+		int swamp[3];
+		int mountains[3];
+};
 class Enemy{ // This MAY become Event
 public:
 };
@@ -14,14 +22,14 @@ public:
 };
 class Item { // For Items and their item ids
 public:
-	int stick[1];
-	int stone[1];
-	int tree[1];
-	int dirt[1];
-	int sludge[1];
-	int plant[1];
-	int cactus[1];
-	int sand[1];
+	int stick[2] = {1,1};
+	int stone[2] = {2,2};
+	int tree[2] = {3,1};
+	int dirt[2] = {4,6};
+	int sludge[2] = {8,6};
+	int plant[2] = {5,4};
+	int cactus[2] = {6,4};
+	int sand[2] = {7,5};
 };
 class Save { // save system vv
 public:
