@@ -22,14 +22,14 @@ public:
 };
 class Item { // For Items and their item ids
 public:
-	int stick[2] = {1,1};
-	int stone[2] = {2,2};
-	int tree[2] = {3,1};
-	int dirt[2] = {4,6};
-	int sludge[2] = {8,6};
-	int plant[2] = {5,4};
-	int cactus[2] = {6,4};
-	int sand[2] = {7,5};
+	string stick[3] = {"1","1","stick"};
+	string stone[3] = {"2","2","stone"};
+	string tree[3] = {"3","1","tree"};
+	string dirt[3] = {"4","6","dirt"};
+	string sludge[3] = {"8","6","mud"};
+	string plant[3] = {"5","4","plant"};
+	string cactus[3] = {"6","4","cactus"};
+	string sand[3] = {"7","5","sand"};
 };
 class Save { // save system vv
 public:
@@ -83,78 +83,29 @@ int playgame(int startstate) {
 		srand(seed);
 		osave << "initseed_" << seed << endl;
 		int biome = rand() % 5 + 1;
-		int* blockitem[2];
+		string* blockitem[3];
+		string* itemid[3];
 		osave << "0\n_" << biome << "\n_" << seed << endl;
 		if (biome == 1) {
 			cout << "You awaken as if you were there all along not remembering anything. You see many trees around.\n";
-			blockitem[1] = &items.tree[1];
-			blockitem[2] = &items.stick[1];
+			blockitem[1] = &items.tree[3];
+			blockitem[2] = &items.stick[3];
 		} if (biome == 2) {
 			cout << "You're up, very suddenly, standing with sand surrounding every bit of your vision and few cactuses.\n";
-			blockitem[1] = &items.cactus[1];
+			blockitem[1] = &items.cactus[3];
 		} if (biome == 3) {
 			cout << "Brrr! It's very cold and theres trees around.\n";
-			blockitem[1] = &items.tree[1];
+			blockitem[1] = &items.tree[3];
 		} if (biome == 4) {
 			cout << "Yuck! You're knee-deep in mud with some trees that surround you.\n";
-			blockitem[1] = &items.tree[1];
-			blockitem[2] = &items.sludge[1];
+			blockitem[1] = &items.tree[3];
+			blockitem[2] = &items.sludge[3];
 		} if (biome == 5) {
 			cout << "You're very high in the sky on some mountains. It isn't as cold as you thought.\n";
-			blockitem[1] = &items.stone[1];
+			blockitem[1] = &items.stone[3];
 		}
 		osave << "_" << *blockitem[1] << "\n_" << *blockitem[2];
-		cout << "You found";
-		int tmp = 0;
-		if ((*blockitem[1] = 1) || (*blockitem[2] = 1)) {
-			tmp++;
-			if (tmp >= 0) {
-			cout << " and some sticks";
-			}
-			cout << " some sticks";
-		} if ((*blockitem[1] = 2) || (*blockitem[2] = 2)) {
-			tmp++;
-			if (tmp >= 0) {
-			cout << " and some stone";
-			}
-			cout << " some stone";
-		} if ((*blockitem[1] = 3) || (*blockitem[2] = 3)) {
-			tmp++;
-			if (tmp >= 0) {
-			cout << " and some trees";
-			}
-			cout << " some trees";
-		} if ((*blockitem[1] = 4) || (*blockitem[2] = 4)) {
-			tmp++;
-			if (tmp >= 0) {
-			cout << " and some dirt";
-			}
-			cout << " some dirt";
-		} if ((*blockitem[1] = 5) || (*blockitem[2] = 5)) {
-			tmp++;
-			if (tmp >= 0) {
-			cout << " and some plants";
-			}
-			cout << " some plants";
-		} if ((*blockitem[1] = 6) || (*blockitem[2] = 6)) {
-			tmp++;
-			if (tmp >= 0) {
-			cout << " and some cactus";
-			}
-			cout << " some cactus";
-		} if ((*blockitem[1] = 7) || (*blockitem[2] = 7)) {
-			tmp++;
-			if (tmp >= 0) {
-			cout << " and some sand";
-			}
-			cout << " some sand";
-		} if ((*blockitem[1] = 8) || (*blockitem[2] = 8)) {
-			tmp++;
-			if (tmp >= 0) {
-			cout << " and some mud";
-			}
-			cout << " some mud";
-		}
+		cout << "You found " << *blockitem[1] << " and " << *blockitem[2] << endl;
 		osave.close();
 		return 0;
 	} else if (startstate == 1) {
