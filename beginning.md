@@ -39,7 +39,7 @@ List of Items
 8 - Mud
 ```
 
-Those are just 5 items I came up with that could be used in the game. I brought items up though because during world generation some event or something (like an item) will be placed in the certain area the player is in. So, at the start of the game it will tell you what is easily accesible (whatever the player sees after suddenly existing) but not what isn't easily accesible. This would be done with using some extra data and common sense from the developer to define attributes of an object.
+Those are just 5* items I came up with that could be used in the game. I brought items up though because during world generation some event or something (like an item) will be placed in the certain area the player is in. So, at the start of the game it will tell you what is easily accesible (whatever the player sees after suddenly existing) but not what isn't easily accesible. This would be done with using some extra data and common sense from the developer to define attributes of an object.
 
 You may (or most likely may not) have noticed I made items array strings. Why? To hold all of their attributes. All their sizes are six because I haven't thought of attributes. They're strings because checking if an item can do something/has the attribute is just **"true"** or **"false"** and that you can have numbers or any other type of data.
 

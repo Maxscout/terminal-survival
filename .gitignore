@@ -1,4 +1,2 @@
-/.saved_game
-/main-debug
-/.cache
-/.ccls-cache
+/out
+/.vs
