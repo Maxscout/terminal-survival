@@ -1,19 +1,13 @@
 #include "terminal survival.h"
 
-class Biome {
-public:/*
-	string forestitems[4] = { stick[1],stick[3],tree[1],tree[3] };
-	string desertitems[2] = { cactus[1],cactus[3] };
-	string snowforestitems[6] = { snow[1],snow[3],stick[1],stick[3],tree[1],tree[3] };
-	string swampitems[6] = { sludge[1],sludge[3],tree[1],tree[3],stick[1],stick[3] };
-	string mountainsitems[2] = { stone[1],stone[3] };*/
-};
+
 
 int playgame(int startstate) {
 	if (startstate == 1) {
 		cout << "Already saved.\n";
 		return 0;
 	}
+	iids item = stick;
 	ifstream isave(".saved_game");
 	ofstream osave(".saved_game");
 	Biome biomes;
@@ -56,3 +50,12 @@ int playgame(int startstate) {
 	osave.close();
 	return 0;
 }
+
+class Biome {
+public:
+	string forestitems[4] = { ,stick[3],tree[1],tree[3] };
+	string desertitems[2] = { cactus[1],cactus[3] };
+	string snowforestitems[6] = { snow[1],snow[3],stick[1],stick[3],tree[1],tree[3] };
+	string swampitems[6] = { sludge[1],sludge[3],tree[1],tree[3],stick[1],stick[3] };
+	string mountainsitems[2] = { stone[1],stone[3] };
+};
