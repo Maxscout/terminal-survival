@@ -1,0 +1,5 @@
+/home/runner/game/CMakeFiles/edit_cache.dir
+/home/runner/game/CMakeFiles/rebuild_cache.dir
+/home/runner/game/source/CMakeFiles/survivaltest.dir
+/home/runner/game/source/CMakeFiles/edit_cache.dir
+/home/runner/game/source/CMakeFiles/rebuild_cache.dir
